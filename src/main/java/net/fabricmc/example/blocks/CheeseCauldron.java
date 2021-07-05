@@ -43,8 +43,8 @@ public class CheeseCauldron extends AbstractCauldronBlock {
 
     @Override
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
-        if(state.get(TIME) < MAX_TIME && world.isSkyVisible(pos) && random.nextInt(25) == 0 && !world.isClient()) {
-            state.with(TIME, state.get(TIME) + 1);
+        if(state.get(TIME) < MAX_TIME && world.isSkyVisible(pos) && random.nextInt(3) == 0 && !world.isClient()) {
+            world.setBlockState(pos, state.with(TIME, state.get(TIME) + 1));
         }
     }
 
